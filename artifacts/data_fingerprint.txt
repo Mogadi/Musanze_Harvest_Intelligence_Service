@@ -1,0 +1,7 @@
+verification_code=AI-A2-7014
+student_name=Mohammed Osama Hasan
+registration_number=25/27014
+seed=7014
+csv=AI_A2_2527014.csv
+rows=246
+sha256=209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10
