@@ -1,0 +1,19 @@
+{
+  "verification_code": "AI-A2-7014",
+  "dataset_sha256": "209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10",
+  "regression_model": "models/regression_pipeline.joblib",
+  "classification_model": "models/classification_pipeline.joblib",
+  "clustering_model": "models/clustering_pipeline.joblib",
+  "selected_regression": "linear_regression",
+  "selected_classification": "logistic_regression",
+  "selected_k": 2,
+  "feature_columns": [
+    "rainfall_mm",
+    "avg_temp_c",
+    "soil_moisture_pct",
+    "fertilizer_kg",
+    "field_size_ha",
+    "season",
+    "cooperative_support"
+  ]
+}

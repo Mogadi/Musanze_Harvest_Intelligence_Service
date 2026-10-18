@@ -1,0 +1,51 @@
+{
+  "verification_code": "AI-A2-7014",
+  "student_name": "Mohammed Osama Hasan",
+  "seed": 7014,
+  "dataset_sha256": "209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10",
+  "test_size": 0.2,
+  "random_state": 7014,
+  "train_rows": 194,
+  "test_rows": 49,
+  "target": "yield_tons",
+  "baseline": {
+    "name": "mean_baseline",
+    "strategy": "mean",
+    "mae": 2.058911,
+    "rmse": 2.600897,
+    "r2": -0.029191
+  },
+  "candidates": [
+    {
+      "name": "linear_regression",
+      "mae": 0.649617,
+      "rmse": 0.842947,
+      "r2": 0.891894,
+      "hyperparameters": {
+        "fit_intercept": true
+      }
+    },
+    {
+      "name": "random_forest",
+      "mae": 1.021425,
+      "rmse": 1.336125,
+      "r2": 0.728391,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "min_samples_leaf": 3,
+        "random_state": 7014,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "selected_model": "linear_regression",
+  "selection_reason": "linear_regression has the lowest held-out RMSE (0.8429 tons), compared with the mean baseline RMSE of 2.6009 tons.",
+  "notable_test_error": {
+    "row_id": 241,
+    "actual_yield_tons": 12.8769,
+    "predicted_yield_tons": 15.137224,
+    "yield_error": -2.260324,
+    "note": "Row 241 has the largest absolute test error. The selected model overestimates harvest by 2.2603 tons (actual 12.8769, predicted 15.1372). That farm has 3.3832 ha, 1316.3 mm of rainfall, and season B."
+  }
+}

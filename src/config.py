@@ -7,9 +7,10 @@ REGISTRATION_NUMBER = "25/27014"
 REGISTRATION_DIGITS = "2527014"
 STUDENT_ID = "ug2527014@ines.ac.rw"
 
-# Last four digits of the registration number.
+# Last four digits of the registration number. Also the train/test random_state.
 LLLL = 7014
 VERIFICATION_CODE = f"AI-A2-{LLLL}"
+TEST_SIZE = 0.2
 
 # 240 + (7014 mod 41) = 243 base rows, then three exact duplicates.
 BASE_ROW_COUNT = 240 + (LLLL % 41)

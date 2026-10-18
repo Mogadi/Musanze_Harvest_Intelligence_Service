@@ -1,0 +1,89 @@
+{
+  "verification_code": "AI-A2-7014",
+  "student_name": "Mohammed Osama Hasan",
+  "seed": 7014,
+  "dataset_sha256": "209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10",
+  "test_size": 0.2,
+  "random_state": 7014,
+  "train_rows": 194,
+  "test_rows": 49,
+  "features": "growing conditions only; yield and high_risk were excluded",
+  "k_scores": [
+    {
+      "k": 2,
+      "silhouette": 0.15588
+    },
+    {
+      "k": 3,
+      "silhouette": 0.140664
+    },
+    {
+      "k": 4,
+      "silhouette": 0.148118
+    },
+    {
+      "k": 5,
+      "silhouette": 0.1401
+    },
+    {
+      "k": 6,
+      "silhouette": 0.146105
+    }
+  ],
+  "selected_k": 2,
+  "selection_reason": "K=2 has the highest silhouette score (0.1559) among K=2, 3, 4, 5, and 6. The score was calculated on training farms after imputation, scaling, and season encoding fit on the training split only. The separation is modest, so the groups overlap and should be treated as a rough organising aid.",
+  "fit_on": "training_split_only",
+  "scaled_centers": [
+    [
+      -0.003669,
+      0.048968,
+      0.012322,
+      0.046727,
+      0.076602,
+      0.949716,
+      0.5,
+      0.5
+    ],
+    [
+      0.004068,
+      -0.054291,
+      -0.013661,
+      -0.051806,
+      -0.084928,
+      -1.052946,
+      0.48913,
+      0.51087
+    ]
+  ],
+  "profiles": [
+    {
+      "cluster": 0,
+      "training_farms": 102,
+      "means": {
+        "rainfall_mm": 1001.9466,
+        "avg_temp_c": 18.6716,
+        "soil_moisture_pct": 51.3391,
+        "fertilizer_kg": 133.0695,
+        "field_size_ha": 2.1223
+      },
+      "season_a_share": 0.5,
+      "cooperative_support_rate": 1.0,
+      "profile": "Cluster 0 contains 102 training farms with more farms receiving cooperative support (100%). The group is a mix of season A and season B. Rainfall, temperature, soil moisture, fertilizer, and field size stay near the training average, so this group is defined by support status rather than by a different climate or field size. A field officer can use it to tell supported farms from unsupported farms. Yield and risk were not used to form the group."
+    },
+    {
+      "cluster": 1,
+      "training_farms": 92,
+      "means": {
+        "rainfall_mm": 1003.7705,
+        "avg_temp_c": 18.2702,
+        "soil_moisture_pct": 50.8491,
+        "fertilizer_kg": 125.6608,
+        "field_size_ha": 1.9421
+      },
+      "season_a_share": 0.4891,
+      "cooperative_support_rate": 0.0,
+      "profile": "Cluster 1 contains 92 training farms with fewer farms receiving cooperative support (0%). The group is a mix of season A and season B. Rainfall, temperature, soil moisture, fertilizer, and field size stay near the training average, so this group is defined by support status rather than by a different climate or field size. A field officer can use it to tell supported farms from unsupported farms. Yield and risk were not used to form the group."
+    }
+  ],
+  "plot_note": "clusters.png shows a two-component PCA of the scaled training features for display. Membership comes from KMeans on the full scaled feature set."
+}
