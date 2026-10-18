@@ -1,0 +1,110 @@
+{
+  "verification_code": "AI-A2-7014",
+  "student_name": "Mohammed Osama Hasan",
+  "seed": 7014,
+  "dataset_sha256": "209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10",
+  "test_size": 0.2,
+  "random_state": 7014,
+  "train_rows": 194,
+  "test_rows": 49,
+  "target": "high_risk",
+  "positive_class": 1,
+  "excluded_inputs": [
+    "yield_tons",
+    "yield_per_ha",
+    "high_risk"
+  ],
+  "baseline": {
+    "name": "majority_baseline",
+    "strategy": "most_frequent",
+    "positive_class": 1,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "accuracy": 0.510204,
+    "roc_auc": 0.5,
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "confusion_matrix": [
+      [
+        25,
+        0
+      ],
+      [
+        24,
+        0
+      ]
+    ]
+  },
+  "candidates": [
+    {
+      "name": "logistic_regression",
+      "positive_class": 1,
+      "precision": 0.958333,
+      "recall": 0.958333,
+      "f1": 0.958333,
+      "accuracy": 0.959184,
+      "roc_auc": 0.998333,
+      "confusion_matrix_labels": [
+        0,
+        1
+      ],
+      "confusion_matrix": [
+        [
+          24,
+          1
+        ],
+        [
+          1,
+          23
+        ]
+      ],
+      "hyperparameters": {
+        "max_iter": 2000,
+        "random_state": 7014
+      }
+    },
+    {
+      "name": "random_forest",
+      "positive_class": 1,
+      "precision": 0.958333,
+      "recall": 0.958333,
+      "f1": 0.958333,
+      "accuracy": 0.959184,
+      "roc_auc": 0.996667,
+      "confusion_matrix_labels": [
+        0,
+        1
+      ],
+      "confusion_matrix": [
+        [
+          24,
+          1
+        ],
+        [
+          1,
+          23
+        ]
+      ],
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "min_samples_leaf": 3,
+        "random_state": 7014,
+        "n_jobs": 1
+      }
+    }
+  ],
+  "selected_model": "logistic_regression",
+  "selection_reason": "logistic_regression ties random_forest on held-out F1 for high_risk=1 (0.9583). It is selected because its ROC-AUC is higher (0.9983 versus 0.9967). The majority baseline F1 is 0.0000.",
+  "notable_test_error": {
+    "row_id": 41,
+    "error_type": "false_negative",
+    "actual_high_risk": 1,
+    "predicted_high_risk": 0,
+    "high_risk_probability": 0.391166,
+    "note": "Row 41 is a missed high-risk farm. The model predicted low risk with high-risk probability 0.3912. Actual yield is 11.7362 tons on 2.1062 ha."
+  }
+}
