@@ -6,7 +6,8 @@
 **Verification code:** AI-A2-7014  
 **Course:** SWE 3513 — Artificial Intelligence, INES-Ruhengeri  
 **Repository:** https://github.com/Mogadi/Musanze_Harvest_Intelligence_Service  
-**Final commit hash:** not recorded yet — this README is prepared as the initial commit
+**Final commit hash:** `05c06d9a76a95bf3bdb8fde4d824ad8ba50c3825` on branch `dataset-generation-validation`  
+This hash is the system commit that contains the trained models and the API. The report and evidence files are added after it. Show `git rev-parse HEAD` in the demonstration for the tip of the branch.
 
 This repository is an individual classroom prototype. It estimates potato harvest quantity, flags farms at high production risk, and groups farms with similar growing conditions for a Musanze potato cooperative. The dataset is **synthetic**. It is generated from registration number 25/27014 and is not a record of real farms.
 
@@ -33,7 +34,7 @@ Training and command-line prediction must work without internet. A small FastAPI
 | Exact duplicate rows appended | 3 |
 | Verification code | `AI-A2-7014` |
 | CSV numeric format | four decimal places (`float_format="%.4f"`) |
-| Dataset fingerprint | SHA-256 of the final CSV, written to `artifacts/data_fingerprint.txt` |
+| Dataset fingerprint | `209caa6bff4616bdeee0e6de48554e870d27289974057935d7287f4655323b10` in `artifacts/data_fingerprint.txt` |
 
 `python run_all.py` rejects any seed other than `7014`.
 
@@ -44,6 +45,7 @@ Training and command-line prediction must work without internet. A small FastAPI
 | Python | 3.14.4 |
 | Operating system | Ubuntu 26.04.1 LTS (Linux 7.0.0-38-generic, x86_64) |
 | Main packages | NumPy, Pandas, scikit-learn, Matplotlib, joblib, FastAPI, uvicorn, pytest |
+| Report tool | fpdf2, used only to typeset the report, test log, and declaration. Training and prediction do not import it. |
 
 ## Setup and run
 
@@ -93,6 +95,10 @@ AI_A2_2527014/
 | `artifacts/plots/confusion_matrix.png` | Classification confusion matrix |
 | `artifacts/plots/clusters.png` | Cluster plot |
 | `models/` | Saved preprocessing and final models used by `predict.py` and `app.py` |
+| `docs/AI_A2_2527014_REPORT.pdf` | Technical report. Its figures match the JSON artifacts. |
+| `evidence/AI_A2_2527014_TEST_LOG.pdf` | Output of `pytest -q` and the named test list |
+| `evidence/AI_A2_2527014_DECLARATION.pdf` | Individual declaration |
+| `evidence/AI_USE.md` | Disclosure of how an AI coding assistant was used |
 
 ## API examples
 
